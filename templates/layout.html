@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+    <title>Cat Adoption</title>
+  </head>
+
+<body>
+
+<div class='row'>
+<div class='col-lg-12'>
+    <h1>
+    {% block header1 %}
+    {% endblock %}
+    </h1>
+</div>
+</div>
+
+<br/>
+    
+<!--nav menu-->
+<div class='row'>
+<div class='col-lg-8 offset-lg-2'>
+<div class='nav'>
+  <ul class='navList'>
+    <li><a href='/'>Home</a></li>
+    <li><a href='/searchCatsPage'>Search Cats</a></li>
+    <li><a href='/allCats'>All Cats</a></li>
+    <li><a href='/successStories'>Success Stories</a></li>
+    <li><a href='/adoptApplication'>Adoption Application Form</a></li>
+    <li><a href='/contact'>Contact</a></li>
+  </ul>
+</div><!--close nav-->
+</div><!--close col-->
+</div><!--close row-->
+
+<br/>
+<br/>
+
+<div class='row'>
+
+    {% block content %}
+    {% endblock %}
+
+</div> 
+
+<footer>
+
+<br/>
+<br/>
+
+<div class='row'>
+<div class='col-lg-8 offset-lg-2'>
+
+<ul class='footerNav'>
+    <li><a href='/'>Home</a></li>
+    <li><a href='/searchCatsPage'>Search Cats</a></li>
+    <li><a href='/allCats'>All Cats</a></li>
+    <li><a href='/successStories'>Success Stories</a></li>
+    <li><a href='/adoptApplication'>Adoption Application Form</a></li>
+    <li><a href='/contact'>Contact</a></li>
+    <li><a href='/rescueHome'>Rescue Home</a></li><!--should be a login-->
+  </ul>
+
+</div><!--close col-->
+</div><!--close row-->
+
+</footer>
+
+</body>
+
+</html>

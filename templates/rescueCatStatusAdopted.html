@@ -1,0 +1,154 @@
+{% extends "rescueLayout.html" %}
+
+{% block header1 %}
+
+Rescues
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+    <div class='col-lg-7 offset-lg-2'>
+    
+    <h2>Update A Cat's Status</h2>
+
+    <h3>Make any changes to your cats status below.</h3>
+
+    <br/>
+    </div>
+    </div>
+
+    <div class='row'>
+	<div class='col-lg-6'>
+
+
+
+		<h2>Adopted Cat</h2>
+
+		<form action="{{ url_for('catAdopted') }}" class="form-horizontal" enctype="multipart/form-data" method="post">
+
+
+      <div>
+      <label class="control-label" for="catName">Cat Name: </label>
+      <input class="form-control" id="catName" type="text" name="catName"/>
+      </div>
+
+       <div>
+      <label class="control-label" for="catRescue">Rescue: </label>
+      <input class="form-control" id="catRescue" type="text" name="catRescue"/>
+      </div>
+      <br/>
+
+      <br/>
+	  <br/>
+      
+      <input class="btn btn-primary" type="submit" value="Adopted Cat" />
+
+
+	</div>
+	<div class='col-lg-6'>
+		<h2>Updated Cat Description</h2>
+
+		<form action="{{ url_for('catUpdateDescription') }}" class="form-horizontal" enctype="multipart/form-data" method="post">
+
+
+      <div>
+      <label class="control-label" for="catName">Cat Name: </label>
+      <input class="form-control" id="catName" type="text" name="catName"/>
+      </div>
+
+       <div>
+      <label class="control-label" for="catRescue">Rescue: </label>
+      <input class="form-control" id="catRescue" type="text" name="catRescue"/>
+      </div>
+
+     <div>
+      <label class="control-label" for="catDescription">Updated Description: </label>
+      <input class="form-control" id="catDescription" type="text" name="catDescription"/>
+      </div>
+
+
+      <br/>
+
+      <br/>
+	  <br/>
+      
+      <input class="btn btn-primary" type="submit" value="Update Cat Description" />
+
+	</div>
+	</div>
+
+
+    <div class='row'>
+	<div class='col-lg-6'>
+
+		<h2>Removed Cat</h2>
+
+
+
+		<form action="{{ url_for('catRemoved') }}" class="form-horizontal" enctype="multipart/form-data" method="post">
+
+
+      <div>
+      <label class="control-label" for="catName">Cat Name: </label>
+      <input class="form-control" id="catName" type="text" name="catName"/>
+      </div>
+
+       <div>
+      <label class="control-label" for="catRescue">Rescue: </label>
+      <input class="form-control" id="catRescue" type="text" name="catRescue"/>
+      </div>
+      <br/>
+
+      <br/>
+	  <br/>
+      
+      <input class="btn btn-primary" type="submit" value="Remove Cat" />
+
+
+	</div>
+	<div class='col-lg-6'>
+		<h2>Cat Follow Up</h2>
+
+
+
+		<form action="{{ url_for('catFollowUp') }}" class="form-horizontal" enctype="multipart/form-data" method="post">
+
+
+      <div>
+      <label class="control-label" for="catName">Cat Name: </label>
+      <input class="form-control" id="catName" type="text" name="catName"/>
+      </div>
+
+       <div>
+      <label class="control-label" for="catRescue">Rescue: </label>
+      <input class="form-control" id="catRescue" type="text" name="catRescue"/>
+      </div>
+
+	  <div>
+      <label class="control-label" for="catFollowUp">Follow Up: </label>
+      <input class="form-control" id="catFollowUp" type="text" name="catFollowUp"/>
+      </div>
+      <br/>
+
+
+
+      <br/>
+	  <br/>
+      
+      <input class="btn btn-primary" type="submit" value="Followed Up About Cat" />
+
+	</div>
+
+	
+	</div>
+
+
+     
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block header1 %}
+
+{{ adoptTitle }} Search For Cats
+
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class='col-lg-6 offset-lg-2'>
+        
+
+<h2>Search for a cat based on traits</h2>
+
+<p>Some examples are:</p>
+
+<ul>
+{% for row in rows %}
+
+<li>{{row["trait1"]}}</li>
+
+
+{% endfor %}
+</ul>
+
+<br/>
+
+</div>
+</div>
+
+<div class='row'>
+<div class='col-lg-5 offset-lg-2'>
+
+<form action="{{ url_for('searchTraitResult') }}" class="form-horizontal" enctype="multipart/form-data" method="get">
+ 
+ <label class="control-label" for="searchTrait" style='font-size:1.7em;'>Search: </label>
+ <input class="form-control" id="searchTrait" type="text" name="searchTrait"/>
+ <br/>
+
+<input class="btn btn-primary" type="submit" value="Search Cats By Trait" name="searchTraitSubmit" id="searchTraitSubmit" />
+
+</form>
+
+</div><!--end col-lg-10-->
+
+{% endblock %}

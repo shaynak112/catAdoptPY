@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block header1 %}
+
+{{ adoptTitle }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class='col-lg-12'>
+
+  <h2 style='text-align:center;'>Our newest cats</h2>
+  <br/>
+  <br/>
+
+</div>
+
+<div class='col-lg-10 offset-lg-2'>
+
+{% for row in rows %}
+
+<div class='col-lg-3' style='vertical-align:top;display:inline-block;margin:0px;padding:0px;'>
+  <img src='{{row["imageURL"]}}' style='width:70%;margin-left:15%;'>
+  <div style='font-size:1.6em;text-align:center;'>Name: {{row["name"]}} </div>
+  <div style='font-size:1.4em;text-align:center;'>Age: {{row["age"]}} </div>
+</div>
+{% endfor %}
+
+
+</div><!--close col-->
+</div><!--close row-->
+
+<br/>
+
+
+<div class='row'>
+<div class='col-lg-8 offset-lg-2'>
+
+<p style='font-size:1.5em;'>For more information about all our cats, click <a href='/allCats'>here</a>.</p>
+
+
+
+</div><!--close col-->
+</div><!--close row-->
+
+<div class='row'>
+<div class='col-lg-8 offset-lg-2'>
+
+<br/>
+<br/>
+
+<div class='col-lg-5' style='vertical-align:top;display:inline-block;'>
+
+{% for row in rows2 %}
+
+<h2>{{row["name"]}} has gone home!</h2>
+
+<br/>
+
+ <img src='{{row["imageURL"]}}' style='height:110px;float:left;padding:5px;margin:5px'>
+
+ {{row["description"]}}
+
+{% endfor %}
+
+
+
+  <br/>
+  <br/>
+  Interested in hearing more about cats who have found homes? Click <a href='/successStories'>here.</a>
+
+</div>
+
+<div class='col-lg-5' style='vertical-align:top;display:inline-block;margin-left:5%;'>
+
+<h2>Benefits of Adopting A Cat?</h2>
+
+<br/>
+
+<ul>
+  <li>shelters can help find the cat who is the best fit for your household</li>
+  <li>they are often adjusted to being around other cats</li>
+  <li>not contributing to the pet overpopulation problem</li>
+  <li>they have a variety of unique personalities</li>
+  <li>you save a life</li>
+</ul>
+
+
+</div>
+
+</div><!--close col-->
+
+{% endblock %}

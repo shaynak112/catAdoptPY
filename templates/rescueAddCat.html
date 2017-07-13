@@ -1,0 +1,104 @@
+{% extends "rescueLayout.html" %}
+
+{% block header1 %}
+
+Rescues
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+    <div class='col-lg-4 offset-lg-3'>
+    	<h2>Add your new cat here</h2>
+    </div>
+    </div>
+
+    <div class='row'>
+    <div class='col-lg-4 offset-lg-3'>
+    
+    <form action="{{ url_for('rescueAddCat') }}" class="form-horizontal" enctype="multipart/form-data" method="post">
+
+
+      <div>
+      <label class="control-label" for="catName">Cat Name: </label>
+      <input class="form-control" id="catName" type="text" name="catName"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="catAge">Cat Age: </label>
+      <input class="form-control" id="catAge" type="text" name="catAge"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="catGender">Gender: </label>
+      <input class="form-control" id="catGender" type="text" name="catGender"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="catBreed">Breed: </label>
+      <input class="form-control" id="catBreed" type="text" name="catBreed"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="catColour">Colour: </label>
+      <input class="form-control" id="catColour" type="text" name="catColour"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="catTrait1">Trait 1: </label>
+      <input class="form-control" id="catTrait1" type="text" name="catTrait1"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="catTrait2">Trait 2: </label>
+      <input class="form-control" id="catTrait2" type="text" name="catTrait2"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="catTrait3">Trait 3: </label>
+      <input class="form-control" id="catTrait3" type="text" name="catTrait3"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="catDescription">Cat Description: </label>
+      <input class="form-control" id="catDescription" type="text" name="catDescription"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="imageURL">Cat Image URL: </label>
+      <input class="form-control" id="imageURL" type="text" name="imageURL"/>
+      </div>
+
+      <div><!--remove once sessions are in-->
+      <label class="control-label" for="catRescue">Rescue: </label>
+      <input class="form-control" id="catRescue" type="text" name="catRescue"/>
+      </div>
+      <br/>
+
+      <!-- currently not working <div>
+      <form action = "/uploader" method = "POST" enctype = "multipart/form-data">
+      <input type = "file" name = "file" />
+      </div>-->
+<br/>
+<br/>
+      
+      <input class="btn btn-primary" type="submit" value="Add Cat" />
+
+
+    </form>
+
+    </div>
+    </div>
+
+<br/>
+
+</div>
+
+     
+
+{% endblock %}

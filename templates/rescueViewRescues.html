@@ -1,0 +1,60 @@
+{% extends "rescueLayout.html" %}
+
+
+    {% block header1 %}
+    View Rescues
+    {% endblock %}
+
+
+    {% block content %}
+
+<div class='col-lg-8 offset-lg-3'>
+
+<h2>List of Rescues</h2>
+
+</div>
+</div>
+
+<div class='row'>
+<div class='col-lg-8 offset-lg-3'>
+
+<h3>Rescues Involved</h3>
+
+  <table>
+    <tr>
+      <th>Rescue Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>Contact Person</th>
+      <th>Date Applied</th>
+      <th>Approved?</th>
+    </tr>
+
+
+    {% for row in rows %}
+      <tr>
+        <td>{{row["rescueName"]}}</td>
+        <td>{{row["address"]}}</td>
+        <td>{{row["phone"]}}</td>
+        <td>{{row["email"]}}</td>
+        <td>{{row["website"]}}</td>
+        <td>{{row["contactPerson"]}}</td>
+        <td>{{row["dateApplied"]}}</td>
+        <td>{{row["approved"]}}</td>
+      </tr>
+
+    {% endfor %}
+
+  </table>
+
+
+</div><!--end col-lg-10-->
+</div> <!--end row-->
+
+
+
+</div>
+
+    {% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block header1 %}
+
+{{ adoptTitle }} Success Stories
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<br/>
+<br/>
+
+<div class='col-lg-7 offset-lg-2'>
+
+<p style='font-size:1.5em;'>These cats have found homes through this website. We love hearing happy stories about how your cats are settling in! Feel free to <a href='/contact'>send us a message</a>! We love to share these stories.</p>
+
+</div><!--end col-->
+</div><!--end row-->
+
+<br/>
+<br/>
+
+<div class='row'>
+<div class='col-lg-10 offset-lg-2'>
+
+
+ {% for row in rows %}
+
+<div class='col-lg-4' style='vertical-align:top;display:inline-block;margin:0px;padding:0px;margin-right:3%;'>
+
+  <img src='{{row["imageURL"]}}' style='height:200px;float:left;padding:5px;margin:5px'>
+  {{row["description"]}}
+
+</div>
+
+
+
+ {% endfor %}
+
+
+
+
+</div><!--end col-->
+
+
+{% endblock %}

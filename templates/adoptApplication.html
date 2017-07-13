@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block header1 %}
+
+{{ adoptTitle }} Application Form
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<br/>
+
+
+    <div class='col-lg-6 offset-lg-3'>
+
+      <p>The regular adoption fee is $70 for each cat. All cats over 10 years old have a reduced adoption fee of $40. These fees include tax. The fee includes vaccinations and being neutered/spayed.</p>
+      <p>Once the form has been filled out, someone will get back to you within a few days. When you are invited in for a meet and greet, you will be asked to fill out some additional questions. Please ensure you bring at least two pieces of ID (one must be government issued such as a driver's license or passport). Please bring the name of your vet so we can fax over your cat's health records as well as provide you with a copy. The fee can be paid by cash or cheque. Be sure to bring a cat carrier and a soft blanket or towel in preparation to bring your new family member home.</p>
+      <p style='font-size:1.3em;'>Please fill out the below form.</p>
+
+    </div><!--close nav-->
+    </div><!--close col-->
+
+<br/>
+
+    <div class='row'>
+    <div class='col-lg-4 offset-lg-3'>
+    
+    <form action="{{ url_for('adoptApplication') }}" class="form-horizontal" enctype="multipart/form-data" method="get">
+
+
+      <div>
+      <label class="control-label" for="appName">Your Full Name: </label>
+      <input class="form-control" id="appName" type="text" name="appName"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="appAge">Age: </label>
+      <input class="form-control" id="appAge" type="text" name="appAge"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="appEmail">Email: </label>
+      <input class="form-control" id="appEmail" type="text" name="appEmail"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="appPhone">Phone Number: </label>
+      <input class="form-control" id="appPhone" type="text" name="appPhone"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="appAddress">Address: </label>
+      <input class="form-control" id="appAddress" type="text" name="appAddress"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="appOccupation">Occupation: </label>
+      <input class="form-control" id="appOccupation" type="text" name="appOccupation"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="appCatName">Name of Cat: </label>
+      <input class="form-control" id="appCatName" type="text" name="appCatName"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="appRefName">Reference Name: </label>
+      <input class="form-control" id="appRefName" type="text" name="appRefName"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="appRefRelation">Relationship To Reference: </label>
+      <input class="form-control" id="appRefRelation" type="text" name="appRefRelation"/>
+      </div>
+
+      <div>
+      <label class="control-label" for="appRefPhone">Reference Phone Number: </label>
+      <input class="form-control" id="appRefPhone" type="text" name="appRefPhone"/>
+      </div>
+
+      <br/>
+      <input class="btn btn-primary" type="submit" value="Submit Application" />
+
+
+    </form>
+
+<br/>
+<br/>
+
+</div>
+
+{% endblock %}

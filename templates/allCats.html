@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block header1 %}
+
+{{ adoptTitle }} Available Cats
+
+{% endblock %}
+
+
+{% block content %}
+
+<br/>
+<br/>
+<br/>
+
+
+<div class='col-lg-7 offset-lg-1'>
+
+<p>Adoption fees are $70 for each cat. All cats over 10 years old have a reduced adoption fee of $40. This includes all vaccinations and being neutered/spayed. Fees include tax. To fill out an application to adopt one of these cats, click <a href='/adoptApplication'>here</a>. Someone will get back to you within a few days.</p>
+
+</div><!--close col-->
+</div><!--close row-->
+
+
+<br/>
+
+<div class='row'>
+<div class='col-lg-11 offset-lg-1'>
+        
+ {% for row in rows %}
+
+         <div class='col-lg-3' style='display:inline-block;vertical-align:top;margin-bottom:50px;'>
+            <h3>Meet {{row["name"]}} </h3>
+            <img src='{{row["imageURL"]}}' style='width:65%;display:inline-block;'>
+            <div>Age: {{row["age"]}}</div>
+            <div>Gender: {{row["gender"]}} </div>
+            <div>Breed: {{row["breed"]}} </div>
+            <div>Colour: {{row["colour"]}} </div>
+            <div>Rescue: {{row["rescue"]}} </div>
+            <div>{{row["name"]}} would be described as {{row["trait1"]}}, {{row["trait2"]}}, and {{row["trait3"]}}. {{row["description"]}}</div>
+         </div>
+
+         {% endfor %}
+
+
+
+</div><!--end col-lg-10-->
+
+<br/>
+<br/>
+
+{% endblock %}

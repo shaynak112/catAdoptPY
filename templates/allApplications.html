@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+<style>
+table
+{
+    border-collapse: collapse;
+}
+
+table, td, th, tr
+{
+    border: 1px solid white;
+    text-align: left;
+}
+</style>
+
+    <title>{{ adoptTitle }}</title>
+  </head>
+
+<body>
+
+<div class='row'>
+<div class='col-lg-12'>
+    <h1>{{ adoptTitle }} Adoption Applications</h1>
+</div>
+</div>
+    
+<!--nav menu-->
+<div class='row'>
+<div class='col-lg-12'>
+<div class='nav'>
+  <ul class='navList'>
+    <li><a href='/'>Home</a></li>
+    <li><a href='/searchCats'>Search Cats</a></li>
+    <li><a href='/allCats'>All Cats</a></li>
+    <li><a href='/successStories'>Success Stories</a></li>
+    <li><a href='/adoptApplication'>Adoption Application Form</a></li>
+    <li><a href='/contact'>Contact</a></li>
+  </ul>
+</div><!--close nav-->
+</div><!--close col-->
+</div><!--close row-->
+
+
+<br/>
+
+<div class='row'>
+<div class='col-lg-10 offset-lg-1'>
+
+<p style='font-size:2em;'>List of adoption applications</p>
+
+</div><!--close col-->
+</div><!--close row-->
+
+<br/>
+<br/>
+<br/>
+
+<div class='row'>
+<div class='col-lg-10 offset-lg-1'>
+
+  <table>
+    <tr>
+      <th>Cat</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Occupation</th>
+      <th>Reference Name</th>
+      <th>Reference Relation</th>
+      <th>Reference Phone</th>
+    </tr>
+
+
+    {% for row in rows %}
+      <tr>
+        <td>{{row["catName"]}}</td>
+        <td>{{row["fullName"]}}</td>
+        <td>{{row["age"]}}</td>
+        <td>{{row["email"]}}</td>
+        <td>{{row["phone"]}}</td>
+        <td>{{row["address"]}}</td>
+        <td>{{row["occupation"]}}</td>
+        <td>{{row["refName"]}}</td>
+        <td>{{row["refRelationship"]}}</td>
+        <td>{{row["refPhone"]}}</td>
+      </tr>
+
+    {% endfor %}
+
+  </table>
+
+
+</div><!--end col-lg-10-->
+</div> <!--end row-->
+   
+
+  </body>
+</html>

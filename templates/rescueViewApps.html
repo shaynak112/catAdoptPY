@@ -1,0 +1,170 @@
+{% extends "rescueLayout.html" %}
+
+{% block header1 %}
+
+Adoption Applications
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class='col-lg-10 offset-lg-1'>
+
+<h2>List of adoption applications</h2>
+
+</div><!--close col-->
+</div><!--close row-->
+
+<br/>
+<br/>
+
+<div class='row'>
+<div class='col-lg-10 offset-lg-1'>
+
+<h3>Pending</h3>
+
+  <table>
+    <tr>
+      <th>Cat</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Occupation</th>
+      <th>Reference Name</th>
+      <th>Reference Relation</th>
+      <th>Reference Phone</th>
+      <th>Follow Up</th>
+    </tr>
+
+
+    {% for row in rows %}
+      <tr>
+        <td>{{row["catName"]}}</td>
+        <td>{{row["fullName"]}}</td>
+        <td>{{row["age"]}}</td>
+        <td>{{row["email"]}}</td>
+        <td>{{row["phone"]}}</td>
+        <td>{{row["address"]}}</td>
+        <td>{{row["occupation"]}}</td>
+        <td>{{row["refName"]}}</td>
+        <td>{{row["refRelationship"]}}</td>
+        <td>{{row["refPhone"]}}</td>
+        <td>{{row["followUp"]}}</td>
+      </tr>
+
+    {% endfor %}
+
+  </table>
+
+
+</div><!--end col-lg-10-->
+</div> <!--end row-->
+
+
+
+<br/>
+<br/>
+<br/>
+
+
+<div class='row'>
+<div class='col-lg-10 offset-lg-1'>
+
+<h3>Approved Applications</h3>
+
+  <table>
+    <tr>
+      <th>Cat</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Occupation</th>
+      <th>Reference Name</th>
+      <th>Reference Relation</th>
+      <th>Reference Phone</th>
+      <th>Follow Up</th>
+    </tr>
+
+
+    {% for row in rows3 %}
+      <tr>
+        <td>{{row["catName"]}}</td>
+        <td>{{row["fullName"]}}</td>
+        <td>{{row["age"]}}</td>
+        <td>{{row["email"]}}</td>
+        <td>{{row["phone"]}}</td>
+        <td>{{row["address"]}}</td>
+        <td>{{row["occupation"]}}</td>
+        <td>{{row["refName"]}}</td>
+        <td>{{row["refRelationship"]}}</td>
+        <td>{{row["refPhone"]}}</td>
+        <td>{{row["followUp"]}}</td>
+      </tr>
+
+    {% endfor %}
+
+  </table>
+
+
+
+
+</div>
+</div>
+
+
+
+
+<br/>
+<br/>
+<br/>
+
+<div class='row'>
+<div class='col-lg-10 offset-lg-1'>
+
+<h3>Denied Applications</h3>
+
+  <table>
+    <tr>
+      <th>Cat</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Occupation</th>
+      <th>Reference Name</th>
+      <th>Reference Relation</th>
+      <th>Reference Phone</th>
+      <th>Follow Up</th>
+    </tr>
+
+
+    {% for row in rows2 %}
+      <tr>
+        <td>{{row["catName"]}}</td>
+        <td>{{row["fullName"]}}</td>
+        <td>{{row["age"]}}</td>
+        <td>{{row["email"]}}</td>
+        <td>{{row["phone"]}}</td>
+        <td>{{row["address"]}}</td>
+        <td>{{row["occupation"]}}</td>
+        <td>{{row["refName"]}}</td>
+        <td>{{row["refRelationship"]}}</td>
+        <td>{{row["refPhone"]}}</td>
+        <td>{{row["followUp"]}}</td>
+      </tr>
+
+    {% endfor %}
+
+  </table>
+
+
+</div>
+
+{% endblock %}
