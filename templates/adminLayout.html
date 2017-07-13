@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+    <title>Admin</title>
+  </head>
+
+<body>
+
+<div class='row'>
+<div class='col-lg-12'>
+    <h1>
+    {% block header1 %}
+    {% endblock %}
+    </h1>
+</div>
+</div>
+
+<br/>
+    
+<!--nav menu-->
+<div class='row'>
+<div class='col-lg-8 offset-lg-2'>
+<div class='nav'>
+  <ul class='navList'>
+    <li><a href='/adminHome'>Admin Home</a></li>
+    <li><a href='/adminApproveRescues'>Approve Rescues</a></li>
+    <li><a href='/adminCatChanges'>Cat Changes</a></li>
+    <li><a href='/adminMessageRescue'>Message Rescue</a></li>
+    <li><a href='/adminMessages'>Admin Messages</a></li>
+  </ul>
+</div><!--close nav-->
+</div><!--close col-->
+</div><!--close row-->
+
+<br/>
+<br/>
+
+<div class='row'>
+
+    {% block content %}
+    {% endblock %}
+
+</div> 
+
+<footer>
+
+<br/>
+<br/>
+
+<div class='row'>
+<div class='col-lg-8 offset-lg-2'>
+
+<ul class='footerNav'>
+    <li><a href='/adminHome'>Admin Home</a></li>
+    <li><a href='/adminApproveRescues'>Approve Rescues</a></li>
+    <li><a href='/adminCatChanges'>Cat Changes</a></li>
+    <li><a href='/adminMessageRescue'>Message Rescue</a></li>
+    <li><a href='/adminMessages'>Admin Messages</a></li>
+    <li><a href='/rescueHome'>Rescue Home</a></li>
+    <li><a href='/'>Public Home</a></li>
+  </ul>
+
+</div><!--close col-->
+</div><!--close row-->
+
+</footer>
+
+</body>
+
+</html>
