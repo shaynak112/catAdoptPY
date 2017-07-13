@@ -1,0 +1,99 @@
+body
+{
+  background-color:#fbcdd4;
+  color:#292929;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+h1
+{
+  font-size:60px;
+  margin-top:30px;
+  margin-left:25%;
+  font-family:Arial, sans-serif;
+  text-shadow:3px 0 15px #292929;
+  text-decoration:none;
+  color:#06c958;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+
+table, td, th, tr
+{
+    border: 1px solid black;
+    text-align: left;
+}
+
+
+
+/*Nav Menu*/
+
+.navList
+{
+	list-style-type:none;
+	text-decoration:none;
+	color:#551a8b;
+	font-color:#551a8b;
+	margin-left:10%;
+	margin-right:10%;
+	float:left;
+	font-size:1.5em;
+}
+
+ul.navList li
+{
+	float:left;
+	margin:12px;
+	color:#551a8b;
+	font-color:#551a8b;
+}
+
+.navList li
+{
+	list-style-type:none;
+	text-decoration:none;
+	color:#551a8b;
+	font-color:#551a8b;
+}
+
+.navList a
+{
+	color:#551a8b;
+	font-color:#551a8b;
+}
+
+.footerNav
+{
+	list-style-type:none;
+	text-decoration:none;
+	color:#551a8b;
+	font-color:#551a8b;
+	margin-left:10%;
+	margin-right:10%;
+	float:left;
+}
+
+ul.footerNav li
+{
+	float:left;
+	margin:12px;
+	color:#551a8b;
+	font-color:#551a8b;
+}
+
+.footerNav li
+{
+	list-style-type:none;
+	text-decoration:none;
+	color:#551a8b;
+	font-color:#551a8b;
+}
+
+.footerNav a
+{
+	color:#551a8b;
+	font-color:#551a8b;
+}
