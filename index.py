@@ -89,6 +89,7 @@ def adoptApplication():
 
 @app.route('/submitAdoptApp', methods=['GET','POST'])
 def submitAdoptApp():
+    print("running submit adopt app")
     try:
         appName = request.form['appName']
         appAge = request.form['appAge']
@@ -100,17 +101,17 @@ def submitAdoptApp():
         appRefName = request.form['appRefName']
         appRefRelation = request.form['appRefRelation']
         appRefPhone = request.form['appRefPhone']
-        sucessful='pending'
         dateApplied='2017-06-17'
         followUp='none'
-        print (appName, appAge, appEmail, appPhone, appAddress, appOccupation, appCatName)
+        sucessful='pending'
+        print (appName, appAge, appEmail, appPhone, appAddress, appOccupation, appCatName, dateApplied, sucessful)
         con = sqlite3.connect("catAdopt.db")
         con.row_factory = sqlite3.Row
         cur = con.cursor()
         cur.execute("INSERT INTO applications('fullName','age','email','phone','address','occupation','catName','refName','refRelationship','refPhone','dateApplied','followUp','sucessful') VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",(appName,appAge,appEmail,appPhone,appAddress,appOccupation,appCatName,appRefName,appRefRelation,appRefPhone,dateApplied,followUp,sucessful))
         con.commit()
         print('entered')
-        return render_template('appThanks.html', adoptTitle=adoptTitle)
+        #return render_template('appThanks.html', adoptTitle=adoptTitle)
     except Exception as e:
         return(str(e))
 
@@ -219,10 +220,15 @@ def rescueViewApps():
     rows2 = cur2.fetchall();
     con3 = sqlite3.connect("catAdopt.db")
     con3.row_factory = sqlite3.Row
-    cur3 = con2.cursor()
+    cur3 = con3.cursor()
     cur3.execute("select * from applications where sucessful='approved' order by catName ASC")
-    rows3 = cur3.fetchall();  
-    return render_template('rescueViewApps.html',rows=rows,rows2=rows2,rows3=rows3)
+    rows3 = cur3.fetchall();
+    con4 = sqlite3.connect("catAdopt.db")
+    con4.row_factory = sqlite3.Row
+    cur4 = con4.cursor()
+    cur4.execute("select * from applications order by catName ASC")
+    rows4 = cur4.fetchall();    
+    return render_template('rescueViewApps.html',rows=rows,rows2=rows2,rows3=rows3,rows4=rows4)
 
 @app.route('/rescueViewRescues')
 def rescueViewRescues():
@@ -335,19 +341,22 @@ def searchCatsPage():
 
 @app.route('/searchTraitResult', methods=['GET','POST'])
 def searchTraitResult():
-    if reuqest.method =="POST":
+    if request.method =="POST":
         adoptTitle = "Cat Adoption"
         con2 = sqlite3.connect("catAdopt.db")
         con2.row_factory = sqlite3.Row
         cur2 = con2.cursor()
         searchTerm = request.form['searchTrait']
+        print (searchTerm)
         #print (searchTermWentThrough)
-        cur2.execute("SELECT * FROM cats WHERE adopted='no' GROUP BY age, name HAVING (trait1=searchTerm) or (trait2=searchTerm) or (trait3=searchTerm)")
+        #cur2.execute("SELECT * FROM cats WHERE adopted='no' GROUP BY age, name HAVING (trait1='searchTerm')")
+        #cur2.execute("SELECT * FROM cats WHERE adopted='no' GROUP BY age, name HAVING (trait1=searchTerm) or (trait2=searchTerm) or (trait3=searchTerm)")
     #print (queryWentThrough)
-    #cur.execute("SELECT * FROM cats WHERE (((trait1=searchTerm) OR (trait2=searchTerm) OR (trait3=searchTerm)) AND adopted='no') ORDER BY rowid DESC")
-        rows2 = cur2.fetchall(); 
-    #print (fetchWentThrough)
-        return render_template('searchTraitResult.html',rows2=rows2,adoptTitle=adoptTitle)
+    cur2.execute("SELECT * FROM cats WHERE (((trait1='searchTerm') OR (trait2='searchTerm') OR (trait3='searchTerm')) AND adopted='no') ORDER BY rowid DESC")
+    print ("queryWentThrough")
+    rows2 = cur2.fetchall(); 
+    print ("fetchWentThrough")
+    return render_template('searchTraitResult.html',rows2=rows2,adoptTitle=adoptTitle)
 
 
 if __name__ == '__main__':

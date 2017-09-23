@@ -35,13 +35,13 @@
 <div class='row'>
 <div class='col-lg-5 offset-lg-2'>
 
-<form action="{{ url_for('searchTraitResult') }}" class="form-horizontal" enctype="multipart/form-data" method="get">
+<form action="{{ url_for('searchTraitResult') }}" class="form-horizontal" enctype="multipart/form-data" method="post">
  
  <label class="control-label" for="searchTrait" style='font-size:1.7em;'>Search: </label>
  <input class="form-control" id="searchTrait" type="text" name="searchTrait"/>
  <br/>
 
-<input class="btn btn-primary" type="submit" value="Search Cats By Trait" name="searchTraitSubmit" id="searchTraitSubmit" />
+<input class="btn btn-primary" type="submit" value="Search By Trait" name="searchTraitSubmit" id="searchTraitSubmit" />
 
 </form>
 
