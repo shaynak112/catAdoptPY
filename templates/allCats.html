@@ -31,13 +31,13 @@
 
          <div class='col-lg-3' style='display:inline-block;vertical-align:top;margin-bottom:50px;'>
             <h3>Meet {{row["name"]}} </h3>
-            <img src='{{row["imageURL"]}}' style='width:65%;display:inline-block;'>
+            <img src='{{row["imageURL"]}}' style='width:65%;display:inline-block;' title='{{row["description"]}}' alt='{{row["name"]}}'>
             <div>Age: {{row["age"]}}</div>
             <div>Gender: {{row["gender"]}} </div>
             <div>Breed: {{row["breed"]}} </div>
             <div>Colour: {{row["colour"]}} </div>
             <div>Rescue: {{row["rescue"]}} </div>
-            <div>{{row["name"]}} would be described as {{row["trait1"]}}, {{row["trait2"]}}, and {{row["trait3"]}}. {{row["description"]}}</div>
+            <div>{{row["name"]}} would be described as {{row["trait1"]}}, {{row["trait2"]}}, and {{row["trait3"]}}.</div>
          </div>
 
          {% endfor %}
